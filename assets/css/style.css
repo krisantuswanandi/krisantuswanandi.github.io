@@ -37,32 +37,42 @@ a:hover {
 }
 
 .photo-container {
+	position: relative;
 	display: inline-block;
-	margin: 75px;
-	padding: 5px;
+	margin: 70px;
+	padding: 10px;
 	cursor: pointer;
 	border-radius: 50%;
-	border: 10px solid #D2DFEC;
-	transition: all 0.5s;
+	background-color: rgba(184, 205, 226, 1);
+	transition: all 0.4s cubic-bezier(.7, 0, 1, 0);
 }
 
-.photo-container:hover {
-	border-color: rgba(144, 177, 209, 0);
-	padding: 45px;
-	margin: 35px;
+.photo-container:before {
+	position: absolute;
+	border-radius: 50%;
+	border: 10px solid rgba(210, 223, 236, 1);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: ' ';
+	transition: inherit;
+}
+
+.photo-container:hover:before {
+	border: 20px solid rgba(210, 223, 236, 0);
+	top: -40px;
+	left: -40px;
+	right: -40px;
+	bottom: -40px;
 }
 
 .photo {
 	display: block;
-	width: 250px;
-	height: 250px;
+	width: 260px;
+	height: 260px;
 	border-radius: 50%;
-}
-
-.photo-container:hover > .photo {
-	border-color: rgba(144, 177, 209, 0);
-	padding: 45px;
-	margin: 35px;
+	border: 8px solid #F5FAFF;
 }
 
 .name {
