@@ -1,0 +1,151 @@
+body {
+	font-family: 'Roboto', arial;
+}
+
+input, textarea {
+	padding: 5px;
+	margin: 2px 0px;
+	width: 400px;
+	font-family: inherit;
+	border: 1px solid #AAAAAA;
+}
+
+li {
+	margin-left: 20px;
+}
+
+a {
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: #4170A9;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.category {
+	background-color: #F5FAFF;
+}
+
+.category-wrapper {
+	padding: 30px;
+}
+
+.tes {
+	display: none;
+}
+
+.photo-container {
+	display: inline-block;
+	margin: 75px;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 50%;
+	border: 10px solid #D2DFEC;
+	transition: all 0.5s;
+}
+
+.photo-container:hover {
+	border-color: rgba(144, 177, 209, 0);
+	padding: 45px;
+	margin: 35px;
+}
+
+.photo {
+	display: block;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+}
+
+.photo-container:hover > .photo {
+	border-color: rgba(144, 177, 209, 0);
+	padding: 45px;
+	margin: 35px;
+}
+
+.name {
+	font-size: 50px;
+	letter-spacing: 10px;
+	color: #02224A;
+}
+
+.name:before, .name:after {
+	content: '';
+	display: block;
+	width: 500px;
+	height: 1px;
+	margin: auto;
+	background-color: #DDDDDD;
+}
+
+.title {
+	margin: 0px 30px;
+	padding: 50px 0px 3px;
+	font-size: 30px;
+	color: #02224A;
+}
+
+.title:first-letter {
+	border-bottom: 1px solid #02224A;
+}
+
+.item {
+	padding: 10px 0px;
+	letter-spacing: 4px;
+}
+
+.label {
+	color: #DFAF0F;
+	padding: 5px 0px;
+}
+
+.label:first-letter {
+	border-bottom: 1px solid #DFAF0F;
+}
+
+.content {
+	line-height: 30px;
+	padding-top: 5px;
+}
+
+.skill-item {
+	padding: 10px 0px;
+}
+
+.skill-label {
+	line-height: 15px;
+}
+
+.health-bar {
+	float: left;
+	width: 300px;
+	height: 15px;
+	margin-right: 30px;
+	background-color: #EAF2F9;
+}
+
+.health-fill {
+	height: 100%;
+	background-color: #4D769E;
+	transition: width 0.5s;
+}
+
+.health-fill.empty {
+	width: 0 !important;
+}
+
+#profile {padding: 100px; text-align: center}
+#ps-fill {width: 75%}
+#html-fill {width: 80%}
+#css-fill {width: 65%}
+#js-fill {width: 62%}
+#php-fill {width: 60%}
+#mysql-fill {width: 60%}
+#crea-fill {width: 90%}
+#comm-fill {width: 70%}
+#rese-fill {width: 87%}
+#team-fill {width: 75%}
+#in-fill {width: 95%}
+#en-fill {width: 80%}
