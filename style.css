@@ -1,5 +1,11 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: 'Roboto', arial;
+	margin: 0;
+	padding: 0;
 }
 
 input, textarea {
@@ -11,6 +17,7 @@ input, textarea {
 }
 
 li {
+	list-style: disc;
 	margin-left: 20px;
 }
 
@@ -32,14 +39,10 @@ a:hover {
 	padding: 30px;
 }
 
-.tes {
-	display: none;
-}
-
 .photo-container {
 	position: relative;
 	display: inline-block;
-	margin: 70px;
+	margin: 50px;
 	padding: 10px;
 	cursor: pointer;
 	border-radius: 50%;
@@ -76,9 +79,11 @@ a:hover {
 }
 
 .name {
-	font-size: 50px;
-	letter-spacing: 10px;
+	margin-bottom: 50px;
 	color: #02224A;
+	font-size: 50px;
+	text-align: center;
+	letter-spacing: 10px;
 }
 
 .name:before, .name:after {
@@ -146,7 +151,14 @@ a:hover {
 	width: 0 !important;
 }
 
-#profile {padding: 100px; text-align: center}
+#profile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	height: 100vh;
+}
+
 #ps-fill {width: 75%}
 #html-fill {width: 80%}
 #css-fill {width: 65%}
