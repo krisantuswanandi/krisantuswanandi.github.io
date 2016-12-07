@@ -1,0 +1,36 @@
+<html><head><link rel="stylesheet" href="../bower_components/polymer/polymer.html">
+
+</head><body><dom-module id="kw-section-item">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            :host > ::content > .title {
+                margin: 5px 0;
+                color: #dfaf0f;
+                font-size: 1.2em;
+                font-weight: 300;
+                letter-spacing: 4px;
+            }
+
+            :host > ::content > .title:first-letter {
+                border-bottom: 1px solid #dfaf0f;
+            }
+
+            :host > ::content .content {
+                margin-bottom: 20px;
+                line-height: 2;
+                letter-spacing: 4px;
+            }
+
+            :host > ::content .list {
+                margin: 0;
+                padding: 0 20px;
+            }
+        </style>
+        <content></content>
+    </template>
+    <script>Polymer({is:"kw-section-item"});</script>
+</dom-module></body></html>

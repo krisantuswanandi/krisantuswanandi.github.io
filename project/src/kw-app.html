@@ -1,0 +1,187 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="kw-section.html">
+<link rel="import" href="kw-section-item.html">
+
+<dom-module id="kw-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      a {
+          letter-spacing: 1px;
+          text-decoration: none;
+          color: #4170a9;
+      }
+
+      a:hover, a:focus, a:active {
+          text-decoration: underline;
+      }
+    </style>
+    <kw-section>
+      <h1 class="title">ABOUT</h1>
+      <kw-section-item>
+        <h2 class="title">ADDRESS</h2>
+        <div class="content">
+          Adam Malik Street RT012/RW004<br>
+          Atambua - 85711<br>
+          Nusa Tenggara Timur<br>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">BIRTHDAY</h2>
+        <div class="content">
+          March 6th, 1993
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">PHONE</h2>
+        <div class="content">
+          +6281314928595
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">EMAIL</h2>
+        <div class="content">
+          krisantuswanandi@gmail.com
+        </div>
+      </kw-section-item>
+    </kw-section>
+    <kw-section>
+      <h1 class="title">SKILLS</h1>
+      <kw-section-item>
+        <h2 class="title">TECHNICAL</h2>
+        <div class="content">
+          Photoshop<br>
+          HTML<br>
+          CSS<br>
+          Javascript<br>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">PERSONAL</h2>
+        <div class="content">
+          Creative<br>
+          Communication<br>
+          Research<br>
+          Teamwork<br>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">LANGUAGE</h2>
+        <div class="content">
+          Bahasa<br>
+          English<br>
+        </div>
+      </kw-section-item>
+    </kw-section>
+    <kw-section>
+      <h1 class="title">EDUCATIONS</h1>
+      <kw-section-item>
+        <h2 class="title">2010 - 2014</h2>
+        <div class="content">
+          Binus University<br>
+          Computer Science (3.72)<br>
+          Jakarta<br>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">2007 - 2010</h2>
+        <div class="content">
+          Kolese Santo Yusup Senior High School<br>
+          Science<br>
+          Malang<br>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">2004 - 2007</h2>
+        <div class="content">
+          Don Bosco Junior High School<br>
+          Atambua<br>
+        </div>
+      </kw-section-item>
+    </kw-section>
+    <kw-section>
+      <h1 class="title">EXPERIENCES</h1>
+      <kw-section-item>
+        <h2 class="title">2015 - 2016</h2>
+        <div class="content">
+          Bahaso Intermedia Cakrawala<br>
+          Front End Developer<br>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">2011 - 2014</h2>
+        <div class="content">
+          Binus University<br>
+          Teaching Assistant<br>
+        </div>
+      </kw-section-item>
+    </kw-section>
+    <kw-section>
+      <h1 class="title">WORKS</h1>
+      <kw-section-item>
+        <h2 class="title">WEB</h2>
+        <div class="content">
+          <ul class="list">
+            <li><a target="_blank" href="#">codepen</a></li>
+            <li><a target="_blank" href="#">saturday</a></li>
+            <li><a target="_blank" href="#">wallpapers</a></li>
+          </ul>
+        </div>
+      </kw-section-item>
+      <kw-section-item>
+        <h2 class="title">DRAWING</h2>
+        <div class="content">
+          <ul class="list">
+            <li><a target="_blank" href="#">instagram</a></li>
+            <li><a target="_blank" href="#">devianart</a></li>
+          </ul>
+        </div>
+      </kw-section-item>
+    </kw-section>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'kw-app',
+
+      properties: {
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        }
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'view1';
+      },
+
+      _pageChanged: function(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
+
+      _showPage404: function() {
+        this.page = 'view404';
+      }
+    });
+  </script>
+</dom-module>
