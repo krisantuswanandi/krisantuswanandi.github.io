@@ -156,7 +156,7 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 	flex-flow: column;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 #ps-fill {width: 75%}
