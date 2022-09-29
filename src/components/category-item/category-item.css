@@ -1,0 +1,18 @@
+.category-item {
+  padding: 10px 0px;
+}
+
+.category-item-title {
+  color: var(--secondary-color);
+  padding: 5px 0px;
+  font-weight: bold;
+}
+
+.category-item-title:first-letter {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.category-item-body {
+  line-height: 30px;
+  padding-top: 5px;
+}
