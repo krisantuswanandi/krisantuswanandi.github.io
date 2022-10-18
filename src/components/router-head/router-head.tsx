@@ -16,13 +16,15 @@ export const RouterHead = component$(() => {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif&amp;display=swap"
         rel="stylesheet"
       />
 
+      <meta name="description" content="Krisantus Wanandi personal website" />
       <meta property="og:site_name" content="Krisantus Wanandi" />
       <meta name="twitter:site" content="@kris_antus" />
       <meta name="twitter:title" content="Krisantus Wanandi" />
+      <meta name="color-scheme" content="light dark" />
 
       {head.meta.map((m) => (
         <meta {...m} />

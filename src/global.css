@@ -1,10 +1,9 @@
 :root {
+  color-scheme: light dark;
   --bg-color: #fafafa;
-  --title-color: #3f3f3f;
-  --body-color: #4e4e4e;
-  --main-color: #4d769e;
-  --main-color-light: #eaf2f9;
-  --secondary-color: #dfaf0f;
+  --fg-color: #f8bbd0;
+  --bg-dark-color: #2f2f2f;
+  --fg-dark-color: #161616;
 }
 
 *,
@@ -15,56 +14,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body, html {
+  height: 100%;
+}
+
+
 body {
-  font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, sans-serif;
+  font-family: 'Noto Serif', 'Times New Roman', Times, Georgia, serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
-}
-
-main {
-  max-width: 600px;
-  margin: auto;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: var(--main-color);
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  min-height: 100vh;
-}
-
-.photo {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.name {
-  margin-top: 20px;
-  color: var(--title-color);
-  font-size: 36px;
-  text-align: center;
 }
