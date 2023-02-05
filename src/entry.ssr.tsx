@@ -15,6 +15,7 @@ export default function (opts: RenderToStreamOptions) {
     },
     containerAttributes: {
       lang: 'en',
+      class: 'h-full',
     },
   })
 }

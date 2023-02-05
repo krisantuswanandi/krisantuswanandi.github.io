@@ -1,27 +1,3 @@
-:root {
-  color-scheme: light dark;
-  --bg-color: #fafafa;
-  --fg-color: #f8bbd0;
-  --bg-dark-color: #2f2f2f;
-  --fg-dark-color: #161616;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body, html {
-  height: 100%;
-}
-
-
-body {
-  font-family: 'Noto Serif', 'Times New Roman', Times, Georgia, serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

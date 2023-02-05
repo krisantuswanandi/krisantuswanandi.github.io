@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Krisantus Wanandi",
+  "short_name": "Santus",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Santus' personal website."
+}
