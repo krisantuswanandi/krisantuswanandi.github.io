@@ -1,5 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import { useDocumentHead, useLocation } from '@builder.io/qwik-city'
+import { ThemeScript } from './theme-script'
 
 export const RouterHead = component$(() => {
   const head = useDocumentHead()
@@ -37,6 +38,8 @@ export const RouterHead = component$(() => {
       {head.styles.map((s) => (
         <style {...s.props} dangerouslySetInnerHTML={s.style} />
       ))}
+
+      <ThemeScript />
     </>
   )
 })

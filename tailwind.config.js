@@ -6,9 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['Noto Serif', ...defaultTheme.fontFamily.serif],
+        serif: ['Noto Serif', ...defaultTheme.fontFamily.serif],
       },
     },
   },
   plugins: [],
-};
+  darkMode: 'class',
+}
