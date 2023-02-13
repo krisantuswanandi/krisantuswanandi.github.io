@@ -37,8 +37,8 @@ export const ThemeToggle = component$(() => {
       class="opacity-20 invert hover:opacity-50 dark:opacity-25 dark:invert-0 dark:hover:opacity-70"
       onClick$={onClick$}
     >
-      <MoonIcon class="hidden dark:inline" />
-      <SunIcon class="dark:hidden" />
+      <MoonIcon class="hidden w-4 dark:inline sm:w-6" />
+      <SunIcon class="w-4 dark:hidden sm:w-6" />
     </button>
   )
 })
