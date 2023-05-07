@@ -1,11 +1,11 @@
-import { $, component$, useClientEffect$, useSignal } from '@builder.io/qwik'
+import { $, component$, useVisibleTask$, useSignal } from '@builder.io/qwik'
 import { SunIcon } from './sun-icon'
 import { MoonIcon } from './moon-icon'
 
 export const ThemeToggle = component$(() => {
   const darkMode = useSignal(false)
 
-  useClientEffect$(() => {
+  useVisibleTask$(() => {
     let theme = localStorage.getItem('theme')
 
     if (!theme) {
@@ -16,7 +16,7 @@ export const ThemeToggle = component$(() => {
     darkMode.value = theme === 'dark'
   })
 
-  useClientEffect$(({ track }) => {
+  useVisibleTask$(({ track }) => {
     track(darkMode)
 
     if (darkMode.value) {
