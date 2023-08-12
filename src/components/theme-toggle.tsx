@@ -1,6 +1,10 @@
 import { $, component$, useVisibleTask$, useSignal } from '@builder.io/qwik'
-import { SunIcon } from './sun-icon'
-import { MoonIcon } from './moon-icon'
+import { LuSun, LuMoon } from '@qwikest/icons/lucide'
+
+/**
+ * Warning `QWIK WARN Duplicate implementations of "JSXNode" found` when using `@qwikest/icons`
+ * see: https://github.com/qwikest/icons/issues/11
+ */
 
 export const ThemeToggle = component$(() => {
   const darkMode = useSignal(false)
@@ -34,11 +38,11 @@ export const ThemeToggle = component$(() => {
 
   return (
     <button
-      class="opacity-20 invert hover:opacity-50 dark:opacity-25 dark:invert-0 dark:hover:opacity-70"
+      class="opacity-30 invert hover:opacity-70 dark:opacity-25 dark:invert-0 dark:hover:opacity-70"
       onClick$={onClick$}
     >
-      <MoonIcon class="hidden w-4 dark:inline sm:w-6" />
-      <SunIcon class="w-4 dark:hidden sm:w-6" />
+      <LuMoon class="hidden text-lg dark:block sm:text-2xl" />
+      <LuSun class="text-lg dark:hidden sm:text-2xl" />
     </button>
   )
 })

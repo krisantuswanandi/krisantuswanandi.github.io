@@ -2,33 +2,35 @@ import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { SocialButton } from '~/components/social-button'
 import { ThemeToggle } from '~/components/theme-toggle'
-import GithubIcon from '~/assets/images/github.svg'
-import TwitterIcon from '~/assets/images/twitter.svg'
-import CodepenIcon from '~/assets/images/codepen.svg'
-import InstagramIcon from '~/assets/images/instagram.svg'
+import {
+  LuGithub,
+  LuTwitter,
+  LuInstagram,
+  LuCodepen,
+} from '@qwikest/icons/lucide'
 
 export const socials = [
   {
     id: 'github',
-    icon: GithubIcon,
+    icon: LuGithub,
     url: 'https://github.com/krisantuswanandi',
     title: 'github link',
   },
   {
     id: 'twitter',
-    icon: TwitterIcon,
+    icon: LuTwitter,
     url: 'https://twitter.com/kris_antus',
     title: 'twitter link',
   },
   {
     id: 'codepen',
-    icon: CodepenIcon,
+    icon: LuCodepen,
     url: 'https://codepen.io/krisantuswanandi',
     title: 'codepen link',
   },
   {
     id: 'instagram',
-    icon: InstagramIcon,
+    icon: LuInstagram,
     url: 'https://instagram.com/krisantus.wanandi',
     title: 'instagram link',
   },
@@ -43,12 +45,9 @@ export default component$(() => {
         </div>
         <div class="flex items-center gap-6">
           {socials.map((social) => (
-            <SocialButton
-              key={social.id}
-              img={social.icon}
-              url={social.url}
-              title={social.title}
-            />
+            <SocialButton key={social.id} url={social.url}>
+              <social.icon q:slot="icon" class="text-lg sm:text-2xl" />
+            </SocialButton>
           ))}
           <ThemeToggle />
         </div>
