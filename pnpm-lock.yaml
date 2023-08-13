@@ -38,7 +38,7 @@ devDependencies:
     specifier: 1.0.0
     version: 1.0.0(eslint@8.39.0)
   postcss:
-    specifier: ^8.4.16
+    specifier: ^8.4.21
     version: 8.4.21
   prettier:
     specifier: 2.8.8
@@ -47,7 +47,7 @@ devDependencies:
     specifier: ^0.2.2
     version: 0.2.2(prettier@2.8.8)
   tailwindcss:
-    specifier: ^3.1.8
+    specifier: ^3.2.4
     version: 3.2.4(postcss@8.4.21)
   typescript:
     specifier: 5.0.4
@@ -716,7 +716,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001448
+      caniuse-lite: 1.0.30001520
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -761,7 +761,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001448
+      caniuse-lite: 1.0.30001520
       electron-to-chromium: 1.4.284
       node-releases: 2.0.8
       update-browserslist-db: 1.0.10(browserslist@4.21.4)
@@ -790,8 +790,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001448:
-    resolution: {integrity: sha512-tq2YI+MJnooG96XpbTRYkBxLxklZPOdLmNIOdIhvf7SNJan6u5vCKum8iT7ZfCt70m1GPkuC7P3TtX6UuhupuA==}
+  /caniuse-lite@1.0.30001520:
+    resolution: {integrity: sha512-tahF5O9EiiTzwTUqAeFjIZbn4Dnqxzz7ktrgGlMYNLH43Ul26IgTMH/zvL3DG0lZxBYnlT04axvInszUsZULdA==}
     dev: true
 
   /ccount@2.0.1:
