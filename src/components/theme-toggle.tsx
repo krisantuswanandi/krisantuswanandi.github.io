@@ -38,7 +38,7 @@ export const ThemeToggle = component$(() => {
 
   return (
     <button
-      class="opacity-30 invert hover:opacity-70 dark:opacity-25 dark:invert-0 dark:hover:opacity-70"
+      class="opacity-40 hover:opacity-70 dark:opacity-25 dark:hover:opacity-70"
       onClick$={onClick$}
     >
       <LuMoon class="hidden text-lg dark:block sm:text-2xl" />

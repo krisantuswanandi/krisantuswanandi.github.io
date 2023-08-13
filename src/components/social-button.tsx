@@ -9,7 +9,7 @@ export const SocialButton = component$<Props>(({ url }) => {
     <a
       href={url}
       target="_blank"
-      class="opacity-30 invert hover:opacity-70 dark:opacity-25 dark:invert-0 dark:hover:opacity-70"
+      class="opacity-40 hover:opacity-70 dark:opacity-25 dark:hover:opacity-70"
     >
       <Slot name="icon" />
     </a>
