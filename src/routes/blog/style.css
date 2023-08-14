@@ -1,0 +1,7 @@
+.blog h1 {
+  @apply mt-8 text-2xl;
+}
+
+.blog p {
+  @apply mt-2 text-neutral-700;
+}

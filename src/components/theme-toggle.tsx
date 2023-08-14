@@ -2,12 +2,12 @@ import { $, component$, useVisibleTask$, useSignal } from '@builder.io/qwik'
 import { LuSun, LuMoon } from '@qwikest/icons/lucide'
 
 /**
- * Warning `QWIK WARN Duplicate implementations of "JSXNode" found` when using `@qwikest/icons`
- * see: https://github.com/qwikest/icons/issues/11
+ * workaround for issue https://github.com/qwikest/icons/issues/14
  */
 
 export const ThemeToggle = component$(() => {
   const darkMode = useSignal(false)
+  const workaround = useSignal(false)
 
   useVisibleTask$(() => {
     let theme = localStorage.getItem('theme')
@@ -18,6 +18,7 @@ export const ThemeToggle = component$(() => {
     }
 
     darkMode.value = theme === 'dark'
+    workaround.value = true
   })
 
   useVisibleTask$(({ track }) => {
@@ -38,11 +39,14 @@ export const ThemeToggle = component$(() => {
 
   return (
     <button
-      class="opacity-40 hover:opacity-70 dark:opacity-25 dark:hover:opacity-70"
+      class="block opacity-40 transition-opacity hover:opacity-70 dark:opacity-25 dark:hover:opacity-70"
       onClick$={onClick$}
     >
       <LuMoon class="hidden text-lg dark:block sm:text-2xl" />
-      <LuSun class="text-lg dark:hidden sm:text-2xl" />
+      <LuSun
+        class="text-lg dark:hidden sm:text-2xl"
+        data-workaround={workaround.value}
+      />
     </button>
   )
 })
