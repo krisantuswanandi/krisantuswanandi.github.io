@@ -37,5 +37,5 @@ module.exports = {
     'no-console': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
   },
-  ignorePatters: ['**/public/**/*'],
+  ignorePatterns: ['**/public/**/*'],
 }
