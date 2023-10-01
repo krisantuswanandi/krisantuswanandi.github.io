@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
+import { component$ } from '@builder.io/qwik'
 import { Link, type DocumentHead } from '@builder.io/qwik-city'
 import { SocialButton } from '~/components/social-button'
 import { ThemeToggle } from '~/components/theme-toggle'
@@ -34,12 +34,6 @@ export const socials = [
 ]
 
 export default component$(() => {
-  const workaround = useSignal(false)
-
-  useVisibleTask$(() => {
-    workaround.value = true
-  })
-
   return (
     <div class="flex h-full items-center justify-center p-4 sm:justify-start sm:p-24">
       <div class="flex flex-col items-center sm:items-start">
@@ -49,7 +43,7 @@ export default component$(() => {
         <div class="flex items-center gap-6">
           {socials.map((social) => (
             <SocialButton key={social.id} url={social.url} title={social.id}>
-              <social.icon class="text-lg sm:text-2xl" title="adfad" />
+              <social.icon class="text-lg sm:text-2xl" />
             </SocialButton>
           ))}
           <Link
@@ -57,10 +51,7 @@ export default component$(() => {
             class="opacity-40 transition-opacity hover:opacity-70 dark:opacity-25 dark:hover:opacity-70"
             title="blog"
           >
-            <LuBookOpen
-              class={`text-lg sm:text-2xl`}
-              data-workaround={workaround.value}
-            />
+            <LuBookOpen class={`text-lg sm:text-2xl`} />
           </Link>
           <div class="-ml-1 -mt-0.5">
             <ThemeToggle />

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@qwikest/icons':
-    specifier: ^0.0.8
-    version: 0.0.8(@builder.io/qwik@1.0.0)
+    specifier: ^0.0.10
+    version: 0.0.10(@builder.io/qwik@1.0.0)
 
 devDependencies:
   '@builder.io/qwik':
@@ -404,8 +404,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@qwikest/icons@0.0.8(@builder.io/qwik@1.0.0):
-    resolution: {integrity: sha512-H5bD/UtAXbP8dsZEfmWmLuySS9bZIdlamxKiIeztgf4EtJEuBGB7c0aG3ZZ8FDRGKRvOS2bOy5CRSc97viiWGA==}
+  /@qwikest/icons@0.0.10(@builder.io/qwik@1.0.0):
+    resolution: {integrity: sha512-GjgYvwv0VRW/tK1m05Z04I0aYh/7f6MCsJOPbYr8dRLoEvtiqm+WfA/nzgK+9LebJjUFT9UCgmBitZiruvqzrg==}
     engines: {node: '>=15.0.0'}
     peerDependencies:
       '@builder.io/qwik': '>=1.0.0'

@@ -1,13 +1,8 @@
 import { $, component$, useVisibleTask$, useSignal } from '@builder.io/qwik'
 import { LuSun, LuMoon } from '@qwikest/icons/lucide'
 
-/**
- * workaround for issue https://github.com/qwikest/icons/issues/14
- */
-
 export const ThemeToggle = component$(() => {
   const darkMode = useSignal(false)
-  const workaround = useSignal(false)
 
   useVisibleTask$(() => {
     let theme = localStorage.getItem('theme')
@@ -18,7 +13,6 @@ export const ThemeToggle = component$(() => {
     }
 
     darkMode.value = theme === 'dark'
-    workaround.value = true
   })
 
   useVisibleTask$(({ track }) => {
@@ -43,10 +37,7 @@ export const ThemeToggle = component$(() => {
       onClick$={onClick$}
     >
       <LuMoon class="hidden text-lg dark:block sm:text-2xl" />
-      <LuSun
-        class="text-lg dark:hidden sm:text-2xl"
-        data-workaround={workaround.value}
-      />
+      <LuSun class="text-lg dark:hidden sm:text-2xl" />
     </button>
   )
 })
