@@ -1,16 +1,45 @@
 import { component$ } from '@builder.io/qwik'
-import { Link } from '@builder.io/qwik-city'
+import { Link, routeLoader$ } from '@builder.io/qwik-city'
 
-const items = [
-  {
-    title: 'Enable location services from command line in macOS',
-    description: `macOS Ventura 13.5 has a known bug where users can't see list of apps that are using location services. In consequence, users can't enable location services for apps that don't have it enabled. To solve this...`,
-    url: '/blog/location-service-macos',
-    date: 'Aug 14, 2023',
-  },
-]
+interface Frontmatter {
+  title: string
+  description: string
+  createdAt: string
+}
+
+interface Markdown {
+  frontmatter: Frontmatter
+}
+
+interface Article extends Frontmatter {
+  url: string
+}
+
+export const useArticles = routeLoader$(async () => {
+  return await Promise.all(
+    Object.entries(
+      import.meta.glob<Markdown>('/src/routes/blog/**/index.mdx'),
+    ).map(async ([path, v]) => {
+      const data = await v()
+      return {
+        url: path.replace('/src/routes', '').replace('/index.mdx', ''),
+        ...data.frontmatter,
+      } as Article
+    }),
+  )
+})
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date)
+}
 
 export default component$(() => {
+  const articles = useArticles()
+
   return (
     <>
       <div class="mt-20">
@@ -39,21 +68,21 @@ export default component$(() => {
         </Link>
       </div>
       <div>
-        {items.map((item) => (
-          <div class="mt-16" key={item.date}>
+        {articles.value.map((article) => (
+          <div class="mt-16" key={article.createdAt}>
             <div class="text-xs text-neutral-500 dark:text-neutral-400">
-              {item.date}
+              {formatDate(new Date(article.createdAt))}
             </div>
             <div class="py-1">
               <Link
-                href={item.url}
+                href={article.url}
                 class="text-lg underline-offset-4 hover:underline"
               >
-                {item.title}
+                {article.title}
               </Link>
             </div>
             <div class="text-sm text-neutral-500 dark:text-neutral-400">
-              {item.description}
+              {article.description}
             </div>
           </div>
         ))}
