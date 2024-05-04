@@ -1,10 +1,10 @@
-import { $, component$, useVisibleTask$, useSignal } from '@builder.io/qwik'
+import { $, component$, useSignal, useOnWindow } from '@builder.io/qwik'
 import { LuSun, LuMoon } from '@qwikest/icons/lucide'
 
 export const ThemeToggle = component$(() => {
   const darkMode = useSignal(false)
 
-  useVisibleTask$(() => {
+  useOnWindow("load", $(() => {
     let theme = localStorage.getItem('theme')
 
     if (!theme) {
@@ -12,13 +12,11 @@ export const ThemeToggle = component$(() => {
       theme = isDark ? 'dark' : 'light'
     }
 
-    darkMode.value = theme === 'dark'
-  })
+    darkMode.value = theme === "dark"
+  }))
 
-  useVisibleTask$(({ track }) => {
-    track(darkMode)
-
-    if (darkMode.value) {
+  const updateTheme = $((isDark: boolean) => {
+    if (isDark) {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
     } else {
@@ -29,6 +27,7 @@ export const ThemeToggle = component$(() => {
 
   const onClick$ = $(() => {
     darkMode.value = !darkMode.value
+    updateTheme(darkMode.value)
   })
 
   return (
