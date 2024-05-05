@@ -42,51 +42,25 @@ export default component$(() => {
 
   return (
     <>
-      <div class="mt-20">
-        <div class="flex justify-center">
-          <div class="text-right">
-            <div class="mr-1 text-rose-500">santus'</div>
-            <div class="-mt-3 text-5xl underline underline-offset-8">
-              Brain Dump
-            </div>
-          </div>
-        </div>
-        <div class="mx-auto mt-4 max-w-lg text-center text-neutral-600 dark:text-neutral-400">
-          Should be a proper blog, but didn't want to waste too much time
-          tweaking my naturally bad writing. Could probably use gpt's help but
-          prefer to use my time to code some more.
-          <br />
-          Or just sleep.
-        </div>
-      </div>
-      <div class="mt-8 text-center">
-        <Link
-          href="/"
-          class="text-sm text-neutral-600 underline underline-offset-4 transition-colors hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-100"
-        >
-          cd ~
-        </Link>
-      </div>
-      <div>
+      <h1>Blog</h1>
+      <ul>
         {articles.value.map((article) => (
-          <div class="mt-16" key={article.createdAt}>
-            <div class="text-xs text-neutral-500 dark:text-neutral-400">
+          <li
+            class="mt-4 flex items-baseline gap-2 first:mt-0"
+            key={article.createdAt}
+          >
+            <Link
+              href={article.url}
+              class="text-lg font-bold underline-offset-4 hover:underline"
+            >
+              {article.title}
+            </Link>
+            <span class="text-sm text-neutral-400 dark:text-neutral-500">
               {formatDate(new Date(article.createdAt))}
-            </div>
-            <div class="py-1">
-              <Link
-                href={article.url}
-                class="text-lg underline-offset-4 hover:underline"
-              >
-                {article.title}
-              </Link>
-            </div>
-            <div class="text-sm text-neutral-500 dark:text-neutral-400">
-              {article.description}
-            </div>
-          </div>
+            </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </>
   )
 })

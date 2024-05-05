@@ -8,10 +8,10 @@ export default component$(() => {
 
   return (
     <div class="blog m-auto max-w-2xl p-4">
-      <div class={loc.url.pathname === '/blog/' ? 'hidden' : ''}>
+      <div>
         <Link
-          href="/blog"
-          class="text-sm text-neutral-600 underline underline-offset-4 transition-colors hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-100"
+          href={loc.url.pathname === '/blog/' ? '/' : '/blog'}
+          class="text-sm text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-100"
         >
           cd ..
         </Link>

@@ -1,5 +1,5 @@
 .blog h1 {
-  @apply mt-8 text-2xl;
+  @apply py-16 text-2xl;
 }
 
 .blog p {
