@@ -1,10 +1,11 @@
-import { $, component$, useSignal, useOnWindow } from '@builder.io/qwik'
+import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import { LuSun, LuMoon } from '@qwikest/icons/lucide'
 
 export const ThemeToggle = component$(() => {
   const darkMode = useSignal(false)
 
-  useOnWindow("load", $(() => {
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
     let theme = localStorage.getItem('theme')
 
     if (!theme) {
@@ -12,8 +13,8 @@ export const ThemeToggle = component$(() => {
       theme = isDark ? 'dark' : 'light'
     }
 
-    darkMode.value = theme === "dark"
-  }))
+    darkMode.value = theme === 'dark'
+  })
 
   const updateTheme = $((isDark: boolean) => {
     if (isDark) {
