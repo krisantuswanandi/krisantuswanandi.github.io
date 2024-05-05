@@ -3,7 +3,6 @@ import { Link, routeLoader$ } from '@builder.io/qwik-city'
 
 interface Frontmatter {
   title: string
-  description: string
   createdAt: string
 }
 
