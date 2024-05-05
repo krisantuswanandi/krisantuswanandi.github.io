@@ -45,7 +45,7 @@ export default component$(() => {
       <ul>
         {articles.value.map((article) => (
           <li
-            class="mt-4 flex items-baseline gap-2 first:mt-0"
+            class="mt-4 flex flex-col items-baseline gap-2 first:mt-0 md:flex-row"
             key={article.createdAt}
           >
             <Link
