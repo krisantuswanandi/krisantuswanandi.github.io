@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik'
-import { Link, type DocumentHead } from '@builder.io/qwik-city'
+import { Link } from '@builder.io/qwik-city'
 import { SocialButton } from '~/components/social-button'
 import { ThemeToggle } from '~/components/theme-toggle'
 import {
@@ -61,7 +61,3 @@ export default component$(() => {
     </div>
   )
 })
-
-export const head: DocumentHead = {
-  title: 'Krisantus Wanandi',
-}

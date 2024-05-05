@@ -65,5 +65,5 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-  title: 'Blog - Krisantus Wanandi',
+  title: 'Blog',
 }
