@@ -7,7 +7,7 @@ export default component$(() => {
   const loc = useLocation()
 
   return (
-    <div class="blog m-auto max-w-2xl p-4">
+    <div class="blog m-auto max-w-screen-2xl p-4 sm:p-24">
       <div>
         <Link
           href={loc.url.pathname === '/blog/' ? '/' : '/blog'}

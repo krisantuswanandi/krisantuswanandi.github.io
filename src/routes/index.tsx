@@ -35,9 +35,9 @@ export const socials = [
 
 export default component$(() => {
   return (
-    <div class="flex h-full items-center justify-center p-4 sm:justify-start sm:p-24">
+    <div class="m-auto flex h-full max-w-screen-2xl items-center justify-center p-4 sm:justify-start sm:p-24">
       <div class="flex flex-col items-center sm:items-start">
-        <div class="mb-6 -mr-3 text-2xl after:ml-1 after:text-4xl after:text-rose-500 after:content-['.'] sm:text-5xl sm:after:ml-2 sm:after:text-7xl">
+        <div class="-mr-3 mb-6 text-2xl after:ml-1 after:text-4xl after:text-rose-500 after:content-['.'] sm:text-5xl sm:after:ml-2 sm:after:text-7xl">
           krisantus wanandi
         </div>
         <div class="flex items-center gap-6">
