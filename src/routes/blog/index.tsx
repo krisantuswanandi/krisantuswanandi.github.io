@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik'
-import { Link, routeLoader$ } from '@builder.io/qwik-city'
+import { DocumentHead, Link, routeLoader$ } from '@builder.io/qwik-city'
 
 interface Frontmatter {
   title: string
@@ -63,3 +63,7 @@ export default component$(() => {
     </>
   )
 })
+
+export const head: DocumentHead = {
+  title: 'Blog - Krisantus Wanandi',
+}
